@@ -345,3 +345,28 @@ input::placeholder, textarea::placeholder { color: #CCC; }
 .resumen-pedido.oculto {
     display: none;
 }
+
+
+
+
+.top-info {
+    display: flex;
+    align-items: center;
+}
+
+.btn-nav {
+    background-color: #F1F2F6;
+    color: var(--text-dark);
+    text-decoration: none;
+    padding: 8px 15px;
+    border-radius: 8px;
+    font-weight: 700;
+    font-size: 0.85em;
+    margin-right: 15px;
+    border: 1px solid var(--border-color);
+    transition: background 0.3s;
+}
+
+.btn-nav:hover {
+    background-color: #E2E4E9;
+}

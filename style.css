@@ -1,0 +1,347 @@
+:root {
+    --bg-main: #FFFFFF;
+    --bg-panel: #F8F9FA;
+    --text-dark: #2D3436;
+    --text-muted: #A0A5AA;
+    --border-color: #EAEAEA;
+    --red-accent: #FF6B6B;
+    --green-accent: #4ECDC4;
+    --yellow-notes: #FFF8D6;
+    --btn-disabled: #E0E0E0;
+    --orange-accent: #D36C00;
+
+}
+
+body {
+    font-family: 'Nunito', sans-serif;
+    background-color: var(--bg-main);
+    color: var(--text-dark);
+    margin: 0;
+    padding: 0 20px 20px 20px;
+}
+
+
+
+
+.top-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 0;
+    border-bottom: 1px solid var(--border-color);
+    margin-bottom: 20px;
+}
+
+.logo {
+    font-size: 1.2em;
+    font-weight: 800;
+    color: #4A4A4A;
+}
+
+.status-online {
+    background: #E8F8F5;
+    color: var(--green-accent);
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 0.85em;
+    font-weight: 700;
+    margin-right: 15px;
+}
+
+.date-text {
+    color: var(--text-muted);
+    font-size: 0.9em;
+    font-weight: 600;
+}
+
+
+.app-container {
+    display: flex;
+    gap: 30px;
+    height: calc(100vh - 100px);
+}
+
+.panel {
+    border-radius: 15px;
+    overflow-y: auto;
+}
+
+.panel-mesero {
+    flex: 1.2;
+    padding-right: 20px;
+}
+
+.panel-cocina {
+    flex: 1.8;
+    background-color: var(--bg-panel);
+    padding: 25px;
+}
+
+h2 {
+    margin: 0 0 5px 0;
+    font-weight: 800;
+    font-size: 1.5em;
+}
+
+.subtitle {
+    color: var(--text-muted);
+    font-size: 0.9em;
+    margin: 0 0 25px 0;
+}
+
+/* FORMULARIO ESCLAVO */
+.form-group { margin-bottom: 25px; }
+
+.input-corto { width: 40%; }
+
+label { 
+    display: block; 
+    font-weight: 700; 
+    font-size: 0.75em;
+    color: var(--text-muted);
+    margin-bottom: 8px; 
+    letter-spacing: 0.5px;
+}
+
+input[type="text"], input[type="number"], textarea {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    box-sizing: border-box;
+    font-family: 'Nunito', sans-serif;
+    font-size: 0.95em;
+    background: #FAFAFA;
+}
+
+input::placeholder, textarea::placeholder { color: #CCC; }
+
+
+
+
+.platillo-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 12px 15px;
+    margin-bottom: 12px;
+    background: white;
+}
+
+.platillo-info {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.platillo-info .icon { font-size: 1.5em; }
+
+.platillo-nombre { font-weight: 700; font-size: 0.95em; }
+.platillo-precio { color: var(--text-muted); font-size: 0.85em; }
+
+
+
+.control-cantidad {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.btn-minus, .btn-plus {
+    width: 30px;
+    height: 30px;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: 1.2em;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn-minus { background: #F1F2F6; color: #A0A5AA; }
+.btn-plus { background: var(--red-accent); color: white; }
+
+.input-qty {
+    width: 30px !important;
+    text-align: center;
+    padding: 0 !important;
+    border: none !important;
+    background: transparent !important;
+    font-weight: 800;
+    font-size: 1.1em;
+}
+
+
+
+/* BOTÓN ENVIAR */
+.btn-generar {
+    width: 100%;
+    background-color: var(--btn-disabled);
+    color: white;
+    padding: 15px;
+    border: none;
+    border-radius: 10px;
+    font-size: 1em;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.btn-generar.activo {
+    background-color: var(--orange-accent);
+}
+
+
+
+
+/* HEADER COCINA */
+.cocina-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 20px;
+}
+
+.badge-pedidos {
+    background: #FFEBEB;
+    color: var(--red-accent);
+    width: 35px;
+    height: 35px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 800;
+    font-size: 1.1em;
+}
+
+
+
+
+
+/* TICKETS COCINA */
+.grid-comandas {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.comanda-card {
+    background: white;
+    padding: 20px;
+    border-radius: 15px;
+    border: 1px solid var(--border-color);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+}
+
+.comanda-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px dashed var(--border-color);
+    padding-bottom: 15px;
+    margin-bottom: 15px;
+}
+
+.info-cliente-mesa {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.etiqueta-mesa {
+    background: var(--red-accent);
+    color: white;
+    padding: 5px 12px;
+    border-radius: 8px;
+    font-weight: 700;
+    font-size: 0.9em;
+}
+
+
+
+
+.nombre-cliente { font-weight: 800; font-size: 1.05em; }
+.hora-pedido { color: var(--text-muted); font-size: 0.85em; font-weight: 600; }
+
+.lista-pedido {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 15px 0;
+}
+
+.lista-pedido li { 
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    font-weight: 600;
+    font-size: 0.95em;
+}
+
+.qty-badge {
+    background: var(--green-accent);
+    color: white;
+    padding: 3px 8px;
+    border-radius: 6px;
+    margin-right: 12px;
+    font-size: 0.85em;
+    font-weight: 700;
+}
+
+.item-precio { margin-left: auto; color: var(--text-muted); }
+
+.notas-box {
+    background: var(--yellow-notes);
+    padding: 12px 15px;
+    border-radius: 8px;
+    font-size: 0.9em;
+    color: #857218;
+    margin-bottom: 15px;
+    border: 1px solid #F5E59B;
+}
+
+.total-comanda {
+    text-align: right;
+    font-weight: 800;
+    font-size: 1.1em;
+    margin-top: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.btn-completar {
+    background: transparent;
+    color: var(--text-muted);
+    border: 1px solid var(--border-color);
+    padding: 8px 15px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 700;
+}
+.btn-completar:hover { background: #F1F2F6; }
+
+
+
+
+.resumen-pedido {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #FFF7EE; 
+    border: 1px solid #F5D3B3;
+    color: #D36C00;
+    padding: 12px 15px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    font-weight: 700;
+    font-size: 0.95em;
+}
+
+.resumen-pedido.oculto {
+    display: none;
+}

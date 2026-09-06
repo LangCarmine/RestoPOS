@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vista de Cocina - RestoPOS</title>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .app-container { display: block; }
+        .panel-cocina { min-height: 85vh; border-radius: 10px; }
+        .grid-comandas {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <header class="top-bar">
+        <div class="logo">Cocina - RestoPOS</div>
+        <div class="top-info">
+            <span class="status-online">• En línea</span>
+        </div>
+    </header>
+
+    <div class="app-container">
+        <section class="panel panel-cocina">
+            <div class="cocina-header">
+                <div>
+                    <h2>Pedidos Activos</h2>
+                    <p class="subtitle" id="texto-contador-pedidos">0 pedidos en curso</p>
+                </div>
+                <div class="badge-pedidos" id="badge-pedidos">0</div>
+            </div>
+            
+            <div id="tablero-cocina" class="grid-comandas">
+            </div>
+        </section>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

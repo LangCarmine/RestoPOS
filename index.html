@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prototipo - RestoPOS</title>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="top-bar">
+        <div class="logo">🍽️ RestoPOS</div>
+        <div class="top-info">
+            <span class="status-online">• En línea</span>
+            <span id="fecha-actual" class="date-text"></span>
+        </div>
+    </header>
+
+    <div class="app-container">
+        
+        <section class="panel panel-mesero">
+            <h2>Nuevo Pedido</h2>
+            <p class="subtitle">Completa el formulario y envía a cocina</p>
+            
+            <form id="form-comanda">
+                
+                <div class="form-group">
+                    <label for="cliente">NOMBRE DEL CLIENTE</label>
+                    <input type="text" id="cliente" placeholder="Ej. María García" required>
+                </div>
+
+                <div class="form-group input-corto">
+                    <label for="mesa">NÚMERO DE MESA</label>
+                    <input type="number" id="mesa" placeholder="Ej. 5" min="1" required>
+                </div>
+
+                <div class="form-group">
+                    <label>PLATILLOS</label>
+                    
+                    <div class="platillo-card">
+                        <div class="platillo-info">
+                            <span class="icon">🍔</span>
+                            <div>
+                                <div class="platillo-nombre">Hamburguesa Clásica</div>
+                                <div class="platillo-precio">$12.50</div>
+                            </div>
+                        </div>
+                        <div class="control-cantidad">
+                            <button type="button" class="btn-minus">-</button>
+                            <input type="number" class="input-qty" value="0" min="0" data-precio="12.50" data-nombre="Hamburguesa Clásica" readonly>
+                            <button type="button" class="btn-plus">+</button>
+                        </div>
+                    </div>
+                    
+                    <div class="platillo-card">
+                        <div class="platillo-info">
+                            <span class="icon">🍕</span>
+                            <div>
+                                <div class="platillo-nombre">Pizza Margarita</div>
+                                <div class="platillo-precio">$14.00</div>
+                            </div>
+                        </div>
+                        <div class="control-cantidad">
+                            <button type="button" class="btn-minus">-</button>
+                            <input type="number" class="input-qty" value="0" min="0" data-precio="14.00" data-nombre="Pizza Margarita" readonly>
+                            <button type="button" class="btn-plus">+</button>
+                        </div>
+                    </div>
+                    
+                    <div class="platillo-card">
+                        <div class="platillo-info">
+                            <span class="icon">🥗</span>
+                            <div>
+                                <div class="platillo-nombre">Ensalada César</div>
+                                <div class="platillo-precio">$9.50</div>
+                            </div>
+                        </div>
+                        <div class="control-cantidad">
+                            <button type="button" class="btn-minus">-</button>
+                            <input type="number" class="input-qty" value="0" min="0" data-precio="9.50" data-nombre="Ensalada César" readonly>
+                            <button type="button" class="btn-plus">+</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="especificaciones">NOTAS PARA LA COCINA</label>
+                    <textarea id="especificaciones" rows="3" placeholder="Ej. Sin cebolla, término medio..."></textarea>
+                </div>
+
+                <div id="resumen-pedido" class="resumen-pedido oculto">
+                    <span id="texto-cantidad-platillos">0 platillos seleccionados</span>
+                    <span id="total-en-vivo">$0.00</span>
+                </div>
+
+                <button type="submit" class="btn-generar" id="btn-enviar" disabled>Enviar Pedido a Cocina</button>
+            </form>
+        </section>
+
+        <section class="panel panel-cocina">
+            <div class="cocina-header">
+                <div>
+                    <h2>Pedidos Activos</h2>
+                    <p class="subtitle" id="texto-contador-pedidos">0 pedidos en curso</p>
+                </div>
+                <div class="badge-pedidos" id="badge-pedidos">0</div>
+            </div>
+            
+            <div id="tablero-cocina" class="grid-comandas">
+            </div>
+        </section>
+        
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
